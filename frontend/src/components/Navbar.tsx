@@ -10,7 +10,7 @@ const Navbar = (props: NavbarProps) => {
       <button onClick={() => props.setCurrentPage("login")}>login</button>
       <button onClick={() => props.setCurrentPage("logout")}>logout</button>
       <button onClick={() => props.setCurrentPage("create")}>create</button>
-      <button onClick={() => props.setCurrentPage("home")}>home</button>q
+      <button onClick={() => props.setCurrentPage("home")}>home</button>
     </div>
   );
 };
