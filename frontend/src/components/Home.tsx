@@ -1,35 +1,19 @@
+import Create from "./Create";
+import List from "./List";
+import { useState } from "react";
 import { Todo } from "../types";
-interface HomeProps {
-  todos: Todo[];
-  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
-}
-const Home = (props: HomeProps) => {
-  const markAsCompleted = (id: number) => {
-    const newTodos = props.todos.map((todo) => {
-      if (todo.id === id) {
-        todo.completed = true;
-      }
-      return todo;
-    });
-    props.setTodos(newTodos);
-  };
+const Home = () => {
+  const [todos, setTodos] = useState<Todo[]>([
+    { id: 1, title: "hello", completed: false },
+    { id: 2, title: "world", completed: true },
+    { id: 3, title: "!", completed: false },
+  ]);
 
   return (
     <div>
-      <h1>Todos</h1>
-      {props.todos.map((todo) => {
-        console.log(todo);
-        return (
-          <div>
-            <h3>
-              {todo.title} ({todo.completed ? "completed" : "not completed"}){" "}
-              <button onClick={() => markAsCompleted(todo.id)}>
-                mark as completed
-              </button>
-            </h3>
-          </div>
-        );
-      })}
+      <h1>Home</h1>
+      <Create todos={todos} setTodos={setTodos} />
+      <List todos={todos} setTodos={setTodos} />
     </div>
   );
 };

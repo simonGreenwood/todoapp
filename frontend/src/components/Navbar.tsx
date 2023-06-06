@@ -1,16 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-interface NavbarProps {
-  setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
-}
-const Navbar = (props: NavbarProps) => {
+const Navbar = () => {
   return (
     <div>
-      <h1>hello!</h1>
-      <button onClick={() => props.setCurrentPage("login")}>login</button>
-      <button onClick={() => props.setCurrentPage("logout")}>logout</button>
-      <button onClick={() => props.setCurrentPage("create")}>create</button>
-      <button onClick={() => props.setCurrentPage("home")}>home</button>
+      <Link to="/">home</Link>
+      <Link to="/login">login</Link>
     </div>
   );
 };
