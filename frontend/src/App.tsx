@@ -1,17 +1,16 @@
 import Login from "./components/Login";
 import Home from "./components/Home";
-import { useState } from "react";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
-
+import { Box } from "@chakra-ui/react";
 const App = () => {
   return (
     <div>
-      <Home />
       <Navbar />
-      {/*<Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-  </Routes>*/}
+      </Routes>
     </div>
   );
 };

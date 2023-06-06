@@ -17,7 +17,6 @@ const List = (props: HomeProps) => {
 
   return (
     <div>
-      <h1>Todos</h1>
       {props.todos.map((todo) => (
         <ListItem todo={todo} markAsCompleted={markAsCompleted} />
       ))}

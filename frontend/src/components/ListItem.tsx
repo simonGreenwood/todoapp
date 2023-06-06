@@ -1,3 +1,4 @@
+import { Box, Button } from "@chakra-ui/react";
 import { Todo } from "../types";
 interface ListItemProps {
   todo: Todo;
@@ -9,9 +10,12 @@ const ListItem = (props: ListItemProps) => {
       <h3>
         {props.todo.title}
         {props.todo.completed ? "completed" : "not completed"}
-        <button onClick={() => props.markAsCompleted(props.todo.id)}>
+        <Button
+          onClick={() => props.markAsCompleted(props.todo.id)}
+          bg="tomato"
+        >
           mark as completed
-        </button>
+        </Button>
       </h3>
     </div>
   );
