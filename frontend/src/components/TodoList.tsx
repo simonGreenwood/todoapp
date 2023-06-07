@@ -1,5 +1,5 @@
-import { UnorderedList, ListItem, ListIcon, Text } from "@chakra-ui/react";
-import { MdCheckCircle } from "react-icons/md";
+import { List, ListItem, ListIcon, Text } from "@chakra-ui/react";
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 import { Todo } from "../types";
 import TodoListItem from "./TodoListItem";
 interface TodoListProps {
@@ -20,14 +20,13 @@ const TodoList = (props: TodoListProps) => {
   return (
     <div>
       <Text fontSize="xl">Todos</Text>
-      <UnorderedList>
+      <List spacing={3}>
         {props.todos.map((todo) => (
           <ListItem>
-            <ListIcon as={MdCheckCircle} color="green.500" />
             <TodoListItem todo={todo} markAsCompleted={markAsCompleted} />
           </ListItem>
         ))}
-      </UnorderedList>
+      </List>
     </div>
   );
 };
