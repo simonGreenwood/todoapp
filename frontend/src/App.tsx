@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 const App = () => {
   return (
-    <div>
+    <div style={{ paddingLeft: 5 }}>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

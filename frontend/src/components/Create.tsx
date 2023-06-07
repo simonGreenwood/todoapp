@@ -24,7 +24,6 @@ const Create = (props: CreateProps) => {
 
   return (
     <div>
-      <h1>Create</h1>
       <form onSubmit={(e) => createTodo(e)}>
         <input
           type="text"

@@ -1,5 +1,5 @@
 import Create from "./Create";
-import List from "./List";
+import TodoList from "./TodoList";
 import { useState } from "react";
 import { Todo } from "../types";
 import { Text } from "@chakra-ui/react";
@@ -13,8 +13,10 @@ const Home = () => {
   return (
     <div>
       <Text fontSize="2xl">Home</Text>
+      <TodoList todos={todos} setTodos={setTodos} />
+      {/* horizontal line */}
+      <hr />
       <Create todos={todos} setTodos={setTodos} />
-      <List todos={todos} setTodos={setTodos} />
     </div>
   );
 };
